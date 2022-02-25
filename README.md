@@ -14,7 +14,7 @@ Please consult the following ressources to learn more about snakemake:
 
 * comprehensive tutorial: https://snakemake.readthedocs.io/en/stable/tutorial/tutorial.html
 
-## Find presentation and heuristic Snakefile in /presentation
+**Find presentation slides and a heuristic Snakefile explained on one slide in the folder /presentation**
 
 ## Run this workflow
 
