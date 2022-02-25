@@ -1,0 +1,16 @@
+file_name: ['i140703-001']
+
+# slice loaded for analysis
+tstart: [0.1]
+tstop: [10.1]
+
+# bandpass filter frequency bounds
+lowcut: [500,500]
+highcut: [5000,7500]
+
+# threshold for spike detection (factor of std(filtered_signal))
+spike_threshold_std: [3,4]
+
+# download links for employed datafiles
+download_link_dict:
+        i140703-001: 'https://gin.g-node.org/INT/multielectrode_grasp/raw/master/datasets/i140703-001.ns6'
