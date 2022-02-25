@@ -1,0 +1,45 @@
+configfile: "config.yml"
+
+rule all:
+    input:
+        -> list of all target-filenames with their name including the employed parameters
+        in snakemake syntax:
+                                 "wildcard"1          "wildcard"2                  "wildcard"3
+             results/hist___file_{file_name}___filter{freq-range}___spike-threshold_{thresh}.png   
+        e.g. results/hist___file_i140703-001___filter [500,7500] ___spike-threshold_   3    .png
+
+rule plot_figures:
+    input:
+        "{file_name}.ns6",
+        "data/filtered_signal_RELEVANT-PARAMETERS-HERE.npy",
+        "data/spiketrains_RELEVANT-PARAMETERS-HERE.npy",
+        "data/spike_stats_RELEVANT-PARAMETERS-HERE.npy"
+    output:
+        "results/signal__RELEVANT-PARAMETERS-HERE}.png",
+        "results/hist___file_{file_name}___filter{freq-range}___spike-threshold_{thresh}.png"
+    script:
+        "scripts/plot.py"
+        
+rule analyze:
+    input:
+        "data/filtered_signal__RELEVANT-PARAMETERS-HERE.npy"
+    output:
+        "data/spiketrains_RELEVANT-PARAMETERS-HERE.npy"
+    script:
+        "scripts/analyze.py"
+
+rule preprocess:
+    input:
+        "{file_name}.ns6"
+    output:
+        "data/filtered_signal_RELEVANT-PARAMETERS-HERE.npy"
+    script:
+        "scripts/preprocess.py"
+        
+rule download_data:
+    output:
+        "{file_name}.ns6"                     
+    params:
+        link = 'download-data-here.com'     
+    shell:
+        "curl -L {params.link} > {output}"
