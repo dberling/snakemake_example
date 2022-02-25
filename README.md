@@ -20,7 +20,7 @@ Find presentation slides and a heuristic Snakefile in the folder "/presentation"
 
 ## Run this workflow
 
-### Linux (will be easiest as all software can be setup with conda via .yml file)
+### Linux (will be easiest as I set it up on linux and all software can be directly set up with conda via .yml file)
 
 #### install miniconda
 
@@ -42,7 +42,7 @@ Find presentation slides and a heuristic Snakefile in the folder "/presentation"
 
 * run "snakemake"
 
-### Others (unfortunately, more basic instructions only)
+### Others (unfortunately, more basic instructions only, but I am happy to help you, ask me)
 
 * install miniconda 
 	* https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
